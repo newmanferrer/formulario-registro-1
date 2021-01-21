@@ -1,0 +1,285 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 360px;
+    height: 640px;
+    margin: 10px 10px;
+    background-color: $background-color;
+    border-radius: 10px;
+    box-shadow: -5px 5px 50px rgba(0, 0, 0, 0.3), 5px -5px 50px rgba(0, 0, 0, 0.1);
+
+    &__title {
+        padding: 0px 0px 15px;
+        text-align: center;
+        font-size: 22px;
+        font-weight: $big-font;
+        color: $primary-color;
+        font-family: $main-font, $main-font-respaldo;
+        text-transform: uppercase;
+        border-bottom: 1px solid $primary-color;
+    }
+
+    &__formulario {
+        margin-top: 0px;
+        padding: 10px 50px;
+    }
+}
+
+.formulario-text-field {
+    position: relative;
+    width: 100%;
+    margin: 20px 0px;
+    border-bottom: 2px solid#adadad;
+
+    &__input,
+    &__label {
+        font-family: $secundary-font, $main-font-respaldo;
+    }
+
+    &__input {
+        padding: 10px 5px;
+        color: $primary-color;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        background: none;
+    }
+
+    &__input::selection {
+        color: $text-color;
+        background-color: $primary-color;
+    }
+
+    &__label {
+        position: absolute;
+        top: 50%;
+        left: 5px;
+
+        color: $secundary-color-2;
+        font-size: 18px;
+        font-weight: $big-font;
+
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: 0.5s ease;
+    }
+
+    &__span {
+        position: absolute;
+        top: 100%;
+        left: 0px;
+
+        width: 0px;
+        height: 3px;
+
+        background-color: $primary-color;
+        transition: 0.5s ease;
+    }
+
+    &__input:focus ~ label,
+    &__input:valid ~ label {
+        top: -5px;
+        color: $primary-color;
+    }
+
+    &__input:focus ~ span,
+    &__input:valid ~ span {
+        width: 100%;
+    }
+
+
+}
+
+.formulario-text-field__input,
+.formulario-text-field__label,
+.formulario-text-field__link {
+    font-family: "Lato", serif;
+}
+
+.formulario-text-field__input {
+    padding: 10px 5px;
+
+    color: $primary-color;
+    font-size: 16px;
+
+    border: none;
+    outline: none;
+    background: none;
+}
+
+.formulario__button {
+    margin: 15px 0px;
+    padding: 5px;
+    width: 100%;
+    color: $text-color;
+    font-size: 25px;
+    font-weight: $big-font;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    background-color: $primary-color;
+    border-radius: 5px;
+}
+
+.formulario__button:hover,
+.formulario__button:focus {
+  color: $primary-color;
+  cursor: pointer;
+  background-color: $background-color;
+  border: 2px solid $primary-color;
+  box-shadow: 7px 7px 10px $primary-color;
+  transition: background-color 0.5s ease-out;
+}
+
+.formulario__button:active {
+    transform: scale(0.95);
+}
+
+.main-container__link {
+    font-size: 18px;
+    color: $primary-color;
+    text-decoration: none;
+}
+
+.main-container__link:hover {
+    font-size: 20px;
+    color: $primary-color;
+}
+
+.main-container__mensajesErrores {
+    margin: 15px 0px 0px;
+    font-size: 12px;
+    color: $primary-color;
+    font-weight: $small-font;
+    text-align: center;
+    text-decoration: none;
+}
+
+.input-error {
+    color: $primary-danger-color;
+}
+
+.input-error:focus ~ label,
+.input-error:valid ~ label {
+    top: -5px;
+    color: $primary-danger-color;
+}
+
+.input-error:focus ~ span,
+.input-error:valid ~ span {
+    width: 100%;
+    background-color: $primary-danger-color;
+}
+
+/* LARGE SCREEN (768px o Superior) 
+===================================================================================== */
+@media screen and (min-width: 768px) {
+    body {
+        align-items: flex-start;
+    }
+    
+        .main-container {
+            width: 600px; /* 360px */
+            height: 500px; /* 700px */
+            margin: 150px auto; /* 0px 15px */
+
+            &__title {
+                margin: 5px 0px;
+                padding: 10px 10px 10px; /* 20px 0px */
+                font-size: 35px; /* 22px */
+            }
+
+            &__formulario {
+                display: grid; /* display: flex */
+                grid-template-columns: 1fr 1fr;
+                column-gap: 10px;
+            }
+        }
+
+    .formulario-text-field {
+        margin: 20px 0px; /* 20px 0px */
+
+        &__label {
+            font-size: 22px; /* 18px */
+        }
+
+        &__input {
+            padding: 12px 6px; /* 10px 5px */
+            font-size: 20px; /* 16px */
+        }
+    }
+
+    .formulario__button {
+        grid-column: 1/3;
+
+        margin: 15px 0px 10px; /* 20px 0px */
+        padding: 5px 0px;   /* 10px  0px */
+    }
+
+    .main-container__link {
+        margin: 2px 0px 0px; /* 15px 0px 5px */
+        font-size: 20px; /* 18px */
+        font-weight: $regular-font;
+    }
+    
+    .main-container__ayuda:hover {
+        font-size: 22px;
+    }
+
+    .main-container__mensajesErrores {
+        margin: 10px 0px; /* 4px 0px */
+        font-weight: $regular-font; /* $small-font */
+    }
+}
+/* ================================================================================== */
+
+/* EXTRA LARGE SCREEN (1024px o Superior 
+===================================================================================== */
+@media screen and (min-width: 1024px) {
+    .main-container {
+        width: 700px; /* 600px */
+        height: 600px; /* 530px */
+        margin: 150px auto; /* 150px auto */
+
+        &__title {
+            margin: 5px 0px; /* 5px 0px */
+            padding: 10px 10px 20px; /* 10px 50px 20px */
+            font-size: 37px; /* 25px */
+        }
+
+        &__formulario {
+            column-gap: 15px; /* 10px */ 
+            padding: 10px 10px 5px; /* 20px 50px 5px*/
+        }
+    }
+
+    .formulario-text-field {
+        margin: 30px 0px; /* 20px 0px */
+
+        &__label {
+            font-size: 24px; /* 22px */
+        }
+
+        &__input {
+            padding: 14px 7px; /* 12px 6px */
+            font-size: 22px; /* 20px */
+        }
+    }
+
+    .formulario__button {
+        margin: 10px 0px; /* 20px 0px 15px */
+        padding: 5px 0px; /* 5px 0px */
+    }
+
+    .main-container__link {
+        margin: 10px 0px 0px; /* 10px 0px 5px */
+    }
+
+    .main-container__mensajesErrores {
+        margin: 20px 0px;
+        font-weight: $big-font; /* $regular-font */
+    } 
+}
+/* ================================================================================== */

@@ -1,0 +1,27 @@
+:root {
+    --text-color: #ffffff;
+    --background-color: #ffffff;
+    --body-background-image-1: #42ebeb;
+    --body-background-image-2: #008080;
+
+    --primary-color: #008080;
+    --secundary-color: #adadad;         
+    --secundary-color-2: #808080;
+
+    --destacar-color: #fba905;
+    --primary-danger-color: #b70e21;
+    --secundary-danger-color: #ff3c32;
+}
+
+$text-color: var(--text-color); 
+$background-color: var(--background-color);
+$body-background-image-1: var(--body-background-image-1);
+$body-background-image-2: var(--body-background-image-2);
+
+$primary-color: var(--primary-color);
+$secundary-color: var(--secundary-color); 
+$secundary-color-2: var(--secundary-color-2); 
+
+$destacar-color: var(--destacar-color);
+$primary-danger-color: var(--primary-danger-color);
+$secundary-danger-color: var(--secundary-danger-color);

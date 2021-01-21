@@ -1,0 +1,21 @@
+extends ../templates/template.pug
+block main
+    .main-container
+        .container-title
+            h1.container-title__title Ayuda
+
+        .container-text
+            p.container-text__text
+                span.container-text__span Nombre y Apellido
+                | : De [1-20] caracteres, mayúsculas o minúsculas, solo letras de [a-z], sin espacios. Un solo nombre y un solo apellido. 
+
+            p.container-text__text 
+                span.container-text__span Email y Email Confirmación
+                | : Formato de email válido. De [6-40] caracteres. Los dos email deben ser identicos. 
+
+            p.container-text__text 
+                span.container-text__span Password y  Password Confirmación
+                | : De [8-12] caracteres, 1 mayúscula, 1 minúsculas, 1 número, 1 caracter especial. Password y Password Confirmación deben ser idénticos.
+
+        .container-link
+            a(href="index.html").container-link__link Regresar 

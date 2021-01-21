@@ -1,0 +1,44 @@
+extends ../templates/template.pug
+block main
+    .main-container
+        h1.main-container__title Formulario de Registro
+
+        form(action="").main-container__formulario#formulario
+        
+            .formulario-text-field
+                input.formulario-text-field__input#nombre(type="text" name="nombre" minlength="1" maxlength="20" required autocomplete="off")
+                span.formulario-text-field__span
+                label.formulario-text-field__label Nombre
+
+            .formulario-text-field
+                input.formulario-text-field__input#apellido(type="text" name="apellido" minlength="1" maxlength="20" required autocomplete="off")
+                span.formulario-text-field__span
+                label.formulario-text-field__label Apellido
+
+            .formulario-text-field
+                input.formulario-text-field__input#email(type="email" name="email" minlength="6" maxlength="40" required autocomplete="off")
+                span.formulario-text-field__span
+                label.formulario-text-field__label Email
+
+            .formulario-text-field
+                input.formulario-text-field__input#email-confir(type="email" name="email-confir" minlength="6" maxlength="40" required autocomplete="off")
+                span.formulario-text-field__span
+                label.formulario-text-field__label Email Confirmación
+
+            .formulario-text-field
+                input.formulario-text-field__input#password(type="password" name="password" minlength="8" maxlength="12" required autocomplete="off")
+                span.formulario-text-field__span
+                label.formulario-text-field__label Password
+
+            .formulario-text-field
+                input.formulario-text-field__input#password-confir(type="password" name="password-confir" minlength="8" maxlength="12" required autocomplete="off")
+                span.formulario-text-field__span
+                label.formulario-text-field__label Password Confirmación
+                
+            button.formulario__button Enviar
+
+        a(href="ayuda.html").main-container__link necesitas ayuda?
+
+        .main-container__mensajesErrores#mensajesErrores
+block script
+    script(src="js/scripts-min.js")    
